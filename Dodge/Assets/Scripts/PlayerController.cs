@@ -35,5 +35,11 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
+        
+        // Scene에 존재하는 GameManager를 가진 오브젝트에서 갖고오기
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        // GameManager의 EndGame 실행
+        gameManager.EndGame();
     }
 }
